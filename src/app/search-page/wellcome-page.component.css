@@ -11,10 +11,15 @@
   position: relative;
 }
 
+.searchInput{
+  background-color:  white !important;
+  width: 70% !important;
+  margin: 10px !important;
+}
+
 .all{
   margin-top: 20%;
   margin-left: 20%;
-
 }
 
 input{
@@ -62,7 +67,7 @@ table{
 }
 
 td, th {
-  border:none;
+  border:none !important;
 }
 
 .trackimage{
@@ -83,5 +88,5 @@ td, th {
 .hovered{
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(0,0,0, .5);
-  transition: .5s all;
+  transition: .1s all;
 }
