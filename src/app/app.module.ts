@@ -32,4 +32,5 @@ const routes: Routes = [
   providers: [SearchMusicService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
