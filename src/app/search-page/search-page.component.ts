@@ -20,7 +20,7 @@ export class WellcomePageComponent  implements OnInit {
   indexForPlayTrack = 0;
   track_url = '';
   playerOb;
-  isPlaying = true;
+  isPlaying = false;
   pictureIsVisible = false;
 
 
@@ -64,6 +64,7 @@ export class WellcomePageComponent  implements OnInit {
       this.playerOb = player;
       console.log(player);
       this.playerOb.play();
+      this.isPlaying = true;
     });
   }
 

@@ -17,7 +17,7 @@ export class SearchMusicService {
   private fakeImage = 'https://i1.sndcdn.com/artworks-000059522031-nwy1v0-large.jpg';
 
   getPost(value: string): Observable<SearchData> {
- const fakeImage = 'https://i1.sndcdn.com/artworks-000059522031-nwy1v0-large.jpg';
+  const fakeImage = 'https://i1.sndcdn.com/artworks-000059522031-nwy1v0-large.jpg';
     return this.http.get(this.makeSearchUrl(value)).map((res: any) => {
       const searchdataMap = new SearchData();
        res.collection.map(function (collection: any, next_: any) {
