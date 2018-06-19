@@ -5,14 +5,15 @@ import {SaveUserDataService} from './save-user-data.service';
 
 
 @Component({
-  selector: 'app-wellcome-page',
-  templateUrl: './wellcome-page.component.html',
-  styleUrls: ['./wellcome-page.component.css']
+  selector: 'app-search-page',
+  templateUrl: './search-page.component.html',
+  styleUrls: ['./search-page.component.css']
 })
 
 export class WellcomePageComponent  implements OnInit {
   searchResultfromComponent: SearchData;
   searchInput = 'Sting';
+  searchImage = 'https://i1.sndcdn.com/artworks-000059522031-nwy1v0-large.jpg';
   searchImage = 'https://i1.sndcdn.com/artworks-000059522031-nwy1v0-large.jpg';
   searchhistory = new Array();
   SC = require('soundcloud');
@@ -51,8 +52,7 @@ export class WellcomePageComponent  implements OnInit {
   setImageUrl(n: number) {
     this.searchImage = this.searchResultfromComponent.searchResultImage[n];
     this.indexForPlayTrack = n;
-    // this.searchResultfromComponent.trArray[n] = true;
-  }
+   }
 
   playTrack (n: number) {
     this.track_url = this.searchResultfromComponent.searchResultURI[n];

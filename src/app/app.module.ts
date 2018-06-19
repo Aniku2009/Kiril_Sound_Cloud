@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import {SearchMusicService} from './search-music.service';
 import {HoverDirective} from './hover.directive';
 import {ClickDirective} from './click.Directive';
-import { WellcomePageComponent } from './search-page/wellcome-page.component';
+import { WellcomePageComponent } from './search-page/search-page.component';
 import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import {SaveUserDataService} from './search-page/save-user-data.service';
