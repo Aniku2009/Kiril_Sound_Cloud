@@ -10,6 +10,7 @@ import {ClickDirective} from './click.Directive';
 import { WellcomePageComponent } from './search-page/wellcome-page.component';
 import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import {SaveUserDataService} from './search-page/save-user-data.service';
 
 
 
@@ -29,7 +30,7 @@ const routes: Routes = [
   imports: [
     BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
   ],
-  providers: [SearchMusicService],
+  providers: [SearchMusicService, SaveUserDataService],
   bootstrap: [AppComponent]
 })
 

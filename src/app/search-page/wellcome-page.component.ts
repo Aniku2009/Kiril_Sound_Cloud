@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchMusicService} from '../search-music.service';
 import {SearchData} from '../searchResult';
+import {SaveUserDataService} from './save-user-data.service';
+
 
 @Component({
   selector: 'app-wellcome-page',
@@ -19,12 +21,14 @@ export class WellcomePageComponent  implements OnInit {
   track_url = '';
   playerOb;
   isPlaying = true;
+  pictureIsVisible = false;
 
 
 
-  constructor(private searchServicefromComponent: SearchMusicService) {
+  constructor(private searchServicefromComponent: SearchMusicService, private saveUserData: SaveUserDataService) {
     this.searchResultfromComponent = new SearchData ();
     this.SC.initialize({client_id: 'ggX0UomnLs0VmW7qZnCzw'});
+    this.pictureIsVisible = this.saveUserData.getDisplayImageParameter('pictureIsVisible');
   }
 
   ngOnInit() {
@@ -86,5 +90,15 @@ export class WellcomePageComponent  implements OnInit {
     const resultOfDivide = rowForDevide.split('/', 5);
     console.log('array from url', resultOfDivide);
     return resultOfDivide[4];
+  }
+
+  displayPicturesInTable () {
+    this.saveUserData.setDisplayImageParameter('pictureIsVisible', true);
+    this.pictureIsVisible = true;
+  }
+
+  hidePicturesInTable () {
+    this.saveUserData.setDisplayImageParameter('pictureIsVisible', false);
+    this.pictureIsVisible = false;
   }
 }
