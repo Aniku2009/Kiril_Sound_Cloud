@@ -14,7 +14,6 @@ export class WellcomePageComponent  implements OnInit {
   searchResultfromComponent: SearchData;
   searchInput = 'Sting';
   searchImage = 'https://i1.sndcdn.com/artworks-000059522031-nwy1v0-large.jpg';
-  searchImage = 'https://i1.sndcdn.com/artworks-000059522031-nwy1v0-large.jpg';
   searchhistory = new Array();
   SC = require('soundcloud');
   searchNext = '';
@@ -52,7 +51,8 @@ export class WellcomePageComponent  implements OnInit {
   setImageUrl(n: number) {
     this.searchImage = this.searchResultfromComponent.searchResultImage[n];
     this.indexForPlayTrack = n;
-   }
+    // this.searchResultfromComponent.trArray[n] = true;
+  }
 
   playTrack (n: number) {
     this.track_url = this.searchResultfromComponent.searchResultURI[n];

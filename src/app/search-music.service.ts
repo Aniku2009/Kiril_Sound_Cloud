@@ -14,14 +14,21 @@ export class SearchMusicService {
 
   private clientId =  'ggX0UomnLs0VmW7qZnCzw';
   private httprowsummary: string;
+  private fakeImage = 'https://i1.sndcdn.com/artworks-000059522031-nwy1v0-large.jpg';
 
   getPost(value: string): Observable<SearchData> {
+ const fakeImage = 'https://i1.sndcdn.com/artworks-000059522031-nwy1v0-large.jpg';
     return this.http.get(this.makeSearchUrl(value)).map((res: any) => {
       const searchdataMap = new SearchData();
        res.collection.map(function (collection: any, next_: any) {
          searchdataMap.searchResultName.push(collection.title);
-         searchdataMap.searchResultImage.push(collection.artwork_url);
-         searchdataMap.searchResultURI.push(collection.uri);
+         if (collection.artwork_url) {
+           searchdataMap.searchResultImage.push(collection.artwork_url);
+           } else {
+           console.log('null value')
+           searchdataMap.searchResultImage.push(fakeImage);
+           }
+       searchdataMap.searchResultURI.push(collection.uri);
        });
       searchdataMap.searchResultContinue = res.next_href;
        return searchdataMap;
